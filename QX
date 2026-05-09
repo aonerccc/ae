@@ -4,14 +4,13 @@
 # https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/icon/icon.json
 
 [general]
-# 自定义解析器
-resource_parser_url = https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
-
 # 超时测试
 server_check_timeout = 2000
 # 代理测试
 server_check_url = http://cp.cloudflare.com/generate_204
 
+# 自定义解析器
+resource_parser_url = https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
 # 位置检查
 geo_location_checker = http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
 # 排除路线
@@ -85,8 +84,8 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Quant
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list, tag=Spotify, force-policy=Spotify, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Instagram/Instagram.list, tag=Instagram, force-policy=Instagram, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Proxy/Proxy.list, tag=国际服务, force-policy=策略模式, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list, tag=LAN, force-policy=直连模式, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list, tag=CN, force-policy=直连模式, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list, tag=LAN, force-policy=直连模式, update-interval=86400, opt-parser=true, enabled=true
 
 # 本地规则
 [filter_local]
@@ -97,9 +96,9 @@ final,策略模式
 [rewrite_remote]
 https://yfamilys.com/rewrite/biliad.conf, tag=哔哩哔哩, update-interval=86400, opt-parser=true, enabled=true
 https://yfamilys.com/rewrite/bili.conf, tag=哔哩哔哩1080, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.conf, tag=Spotify, update-interval=86400, opt-parser=true, enabled=true
 https://ddgksf2013.top/rewrite/XiaoHongShuAds.conf, tag=小红书, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/app2smile/rules/master/module/qidian.conf, tag=起点小说, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.conf, tag=Spotify, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/YoutubeAds.conf, tag=Youtube, update-interval=86400, opt-parser=true, enabled=true
 https://yfamilys.com/rewrite/meituxx.conf, tag=美图秀秀, update-interval=86400, opt-parser=true, enabled=true
 
