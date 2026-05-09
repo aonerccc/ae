@@ -1,5 +1,12 @@
-[General]
+# 插件库
+# https://hub.kelee.one
+# 规则库
+# https://github.com/luestr/ShuntRules
+# 图标合集
+# https://raw.githubusercontent.com/luestr/IconResource/refs/heads/main/KeLee_icon.json
+# https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/Other/QureColor.json
 
+[General]
 # IP查询模式
 ip-mode = v4-only
 ipv6-vif = off
@@ -7,19 +14,14 @@ ipv6-vif = off
 # 服务器
 dns-server = system,223.5.5.5,119.29.29.29
 doh-server = https://doh.pub/dns-query,https://dns.alidns.com/dns-query
-
 # SNI辅助匹配
 sni-sniffing = true
-
 # UDP端口禁用
 disable-stun = true
-
 # DNS拦截模式
 dns-reject-mode = LoopbackIP
-
 # 域名拦截模式
 domain-reject-mode = DNS
-
 # UDP回退策略
 udp-fallback-mode = REJECT
 
@@ -30,20 +32,17 @@ allow-wifi-access = false
 
 # 网络接口模式
 interface-mode = auto
-
-# 测试超时时间
-test-timeout = 3
-
 # 策略变更中断
 disconnect-on-policy-change = false
 
+# 测试超时
+test-timeout = 3
 # 网络测试
 internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
 proxy-test-url = http://www.gstatic.com/generate_204
 
 # 自定义解析器
 resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
-
 # 自定义数据库
 geoip-url = https://geodata.kelee.one/Country-Masaiki.mmdb
 ipasn-url = https://geodata.kelee.one/GeoLite2-ASN-P3TERX.mmdb
@@ -72,36 +71,39 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 # 代理策略
 [Proxy Group]
 策略模式 = select,优选,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-苹果服务 = select,策略模式,直连模式,香港,狮城,日本,美国,台湾,韩国,img-url = applelogo
-谷歌服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png
+
+苹果服务 = select,直连模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
+谷歌服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
 微软服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-推特服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/X.png
-飞机服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Telegram.png
-智能服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChatGPT.png
-抖音服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png
-Spotify = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Spotify.png
-Instagram = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Instagram.png
+推特服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/X.png
+飞机服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+智能服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+抖音服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
+Spotify = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+Ins Ins = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
 
 直连模式 = select,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 禁止模式 = select,REJECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
 
-优选 = url-test,所有节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/RemoteResourceConverter.png
+优选 = url-test,所有节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+
 香港 = url-test,香港节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 狮城 = url-test,狮城节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 日本 = url-test,日本节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
 美国 = url-test,美国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-台湾 = url-test,台湾节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
+台湾 = url-test,台湾节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
 韩国 = url-test,韩国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
 
+# 规则
 [Rule]
-DOMAIN-SUFFIX,push.apple.com,日本
-# 最终规则
+GEOIP,CN,直连模式
 FINAL,策略模式
 
 # 远程规则
 [Remote Rule]
 https://rule.kelee.one/Loon/Direct.lsr, policy=直连模式, tag=规则修正, enabled=true
 https://rule.kelee.one/Loon/Advertising.lsr, policy=禁止模式, tag=禁止广告, enabled=true
+https://rule.kelee.one/Loon/AdvertisingLite.lsr, policy=禁止模式, tag=禁止广告, enabled=false
 https://rule.kelee.one/Loon/Hijacking.lsr, policy=禁止模式, tag=反劫服务, enabled=false
 https://rule.kelee.one/Loon/Privacy.lsr, policy=禁止模式, tag=隐私保护, enabled=false
 https://rule.kelee.one/Loon/Apple.lsr, policy=苹果服务, tag=苹果服务, enabled=true
@@ -112,26 +114,13 @@ https://rule.kelee.one/Loon/Telegram.lsr, policy=飞机服务, tag=飞机服务,
 https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=智能服务, tag=智能服务, enabled=true
 https://rule.kelee.one/Loon/TikTok.lsr, policy=抖音服务, tag=抖音服务, enabled=true
 https://rule.kelee.one/Loon/Spotify.lsr, policy=Spotify, tag=Spotify, enabled=true
-https://rule.kelee.one/Loon/Instagram.lsr, policy=Instagram, tag=Instagram, enabled=true
-https://rule.kelee.one/Loon/Crypto.lsr, policy=策略模式, tag=Crypto, enabled=true
-https://rule.kelee.one/Loon/GlobalMedia.lsr, policy=策略模式, tag=国外媒体, enabled=true
-https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER.lsr, policy=直连模式, tag=LAN, enabled=true
-https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=直连模式, tag=CN REGION, enabled=true
+https://rule.kelee.one/Loon/Instagram.lsr, policy=Ins Ins, tag=Instagram, enabled=true
+https://rule.kelee.one/Loon/Proxy.lsr, policy=策略模式, tag=国际, enabled=true
+https://rule.kelee.one/Loon/China.lsr, policy=直连模式, tag=CN, enabled=true
+https://rule.kelee.one/Loon/Lan.lsr, policy=直连模式, tag=LAN, enabled=true
 
 # 本地映射
 [Host]
-
-# 重写
-[Rewrite]
-
-# 远程重写
-[Remote Rewrite]
-
-# 脚本
-[Script]
-
-# 远程脚本
-[Remote Script]
 
 # 模块
 [Plugin]
@@ -154,6 +143,18 @@ https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=策略模式, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=策略模式, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=策略模式, enabled=true
 
+# 重写
+[Rewrite]
+
+# 远程重写
+[Remote Rewrite]
+
+# 脚本
+[Script]
+
+# 远程脚本
+[Remote Script]
+
 [Mitm]
-skip-server-cert-verify = true
 hostname =
+skip-server-cert-verify = true
