@@ -95,13 +95,13 @@ final,策略模式
 
 # 远程重写
 [rewrite_remote]
-https://yfamilys.com/rewrite/biliad.conf, tag=B, update-interval=86400, opt-parser=true, enabled=true
-https://yfamilys.com/rewrite/bili.conf, tag=B 1080, update-interval=86400, opt-parser=false, enabled=true
+https://yfamilys.com/rewrite/biliad.conf, tag=哔哩哔哩, update-interval=86400, opt-parser=true, enabled=true
+https://yfamilys.com/rewrite/bili.conf, tag=哔哩哔哩1080, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.conf, tag=Spotify, update-interval=86400, opt-parser=true, enabled=true
 https://ddgksf2013.top/rewrite/XiaoHongShuAds.conf, tag=小红书, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/app2smile/rules/master/module/qidian.conf, tag=起点, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/app2smile/rules/master/module/qidian.conf, tag=起点小说, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/YoutubeAds.conf, tag=Youtube, update-interval=86400, opt-parser=true, enabled=true
-https://yfamilys.com/rewrite/meituxx.conf, tag=美图, update-interval=86400, opt-parser=true, enabled=true
+https://yfamilys.com/rewrite/meituxx.conf, tag=美图秀秀, update-interval=86400, opt-parser=true, enabled=true
 
 # 本地重写
 [rewrite_local]
