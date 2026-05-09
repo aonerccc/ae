@@ -67,7 +67,7 @@ url-latency-benchmark = 韩国, server-tag-regex=韩国|韩|🇰🇷|KR|(?i)Kore
 # 远程订阅
 [server_remote]
 
-# 本地订阅
+# 订阅
 [server_local]
 
 # 远程规则
@@ -90,7 +90,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Quant
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list, tag=CN, force-policy=直连模式, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list, tag=LAN, force-policy=直连模式, update-interval=86400, opt-parser=true, enabled=true
 
-# 本地规则
+# 规则
 [filter_local]
 geoip,cn,直连模式
 final,策略模式
@@ -105,7 +105,7 @@ https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.conf, ta
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/YoutubeAds.conf, tag=Youtube, update-interval=86400, opt-parser=true, enabled=true
 https://yfamilys.com/rewrite/meituxx.conf, tag=美图秀秀, update-interval=86400, opt-parser=true, enabled=true
 
-# 本地重写
+# 重写
 [rewrite_local]
 
 # 脚本
