@@ -116,8 +116,8 @@ https://rule.kelee.one/Loon/TikTok.lsr, policy=抖音服务, tag=抖音服务, e
 https://rule.kelee.one/Loon/Spotify.lsr, policy=Spotify, tag=Spotify, enabled=true
 https://rule.kelee.one/Loon/Instagram.lsr, policy=Ins Ins, tag=Instagram, enabled=true
 https://rule.kelee.one/Loon/Proxy.lsr, policy=策略模式, tag=国际, enabled=true
-https://rule.kelee.one/Loon/China.lsr, policy=直连模式, tag=CN, enabled=true
 https://rule.kelee.one/Loon/Lan.lsr, policy=直连模式, tag=LAN, enabled=true
+https://rule.kelee.one/Loon/China.lsr, policy=直连模式, tag=CN, enabled=true
 
 # 本地映射
 [Host]
