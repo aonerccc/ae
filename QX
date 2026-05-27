@@ -42,6 +42,8 @@ doh-server = https://doh.pub/dns-query, https://dns.alidns.com/dns-query
 [policy]
 static = 策略模式, 优选, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Quantumult_X.png
 
+url-latency-benchmark = 优选, server-tag-regex=.*, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+
 static = 苹果服务, 直连模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
 static = 谷歌服务, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
 static = 微软服务, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
@@ -54,8 +56,6 @@ static = Ins Ins, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, 
 
 static = 直连模式, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 static = 禁止模式, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
-
-url-latency-benchmark = 优选, server-tag-regex=.*, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
 
 url-latency-benchmark = 香港, server-tag-regex=香港|港|🇭🇰|HK|(?i)Hong, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 url-latency-benchmark = 狮城, server-tag-regex=新加坡|新|🇸🇬|SG|(?i)Singapore, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
@@ -87,8 +87,8 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Quant
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Spotify/Spotify.list, tag=Spotify, force-policy=Spotify, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Instagram/Instagram.list, tag=Instagram, force-policy=Ins Ins, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Proxy/Proxy.list, tag=国际, force-policy=策略模式, update-interval=86400, opt-parser=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list, tag=LAN, force-policy=直连模式, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/China/China.list, tag=CN, force-policy=直连模式, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list, tag=LAN, force-policy=直连模式, update-interval=86400, opt-parser=true, enabled=true
 
 # 规则
 [filter_local]
