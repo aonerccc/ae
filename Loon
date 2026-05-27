@@ -72,6 +72,8 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 [Proxy Group]
 策略模式 = select,优选,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 
+优选 = url-test,所有节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+
 苹果服务 = select,直连模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
 谷歌服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
 微软服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
@@ -84,8 +86,6 @@ Ins Ins = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url 
 
 直连模式 = select,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 禁止模式 = select,REJECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
-
-优选 = url-test,所有节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
 
 香港 = url-test,香港节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 狮城 = url-test,狮城节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
@@ -116,8 +116,9 @@ https://rule.kelee.one/Loon/TikTok.lsr, policy=抖音服务, tag=抖音服务, e
 https://rule.kelee.one/Loon/Spotify.lsr, policy=Spotify, tag=Spotify, enabled=true
 https://rule.kelee.one/Loon/Instagram.lsr, policy=Ins Ins, tag=Instagram, enabled=true
 https://rule.kelee.one/Loon/Proxy.lsr, policy=策略模式, tag=国际, enabled=true
-https://rule.kelee.one/Loon/Lan.lsr, policy=直连模式, tag=LAN, enabled=true
 https://rule.kelee.one/Loon/China.lsr, policy=直连模式, tag=CN, enabled=true
+https://rule.kelee.one/Loon/Lan.lsr, policy=直连模式, tag=LAN, enabled=true
+https://rule.kelee.one/Loon/Crypto.lsr, policy=日本, tag=Crypto.lsr, enabled=true
 
 # 本地映射
 [Host]
@@ -126,7 +127,7 @@ https://rule.kelee.one/Loon/China.lsr, policy=直连模式, tag=CN, enabled=true
 [Plugin]
 https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, enabled=false
 https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, enabled=true
