@@ -6,27 +6,53 @@ mixed-port: 7893
 tproxy-port: 7894
 
 # [通用设置]
+external-controller: 0.0.0.0:9090
+geodata-loader: standard
 unified-delay: true
+allow-lan: true
+ipv6: true
+mode: rule
+log-level: info
 tcp-concurrent: true
 find-process-mode: strict
 global-client-fingerprint: chrome
-allow-lan: true
-mode: rule
-log-level: info
-ipv6: true
-udp: true
-geodata-mode: false
-geodata-loader: standard
-geo-auto-update: true
-geo-update-interval: 24
-external-controller: 0.0.0.0:9090
 
 # [数据库]
+geodata-mode: false
+geo-auto-update: true
+geo-update-interval: 24
 geox-url:
   geoip: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geoip.dat"
   geosite: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geosite.dat"
   mmdb: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/country.mmdb"
   asn: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/GeoLite2-ASN.mmdb"
+
+# [DNS设置]
+dns:
+  enable: true
+  ipv6: false
+  prefer-h3: false
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fake-ip-filter:
+    - '*.lan'
+    - '+.local'
+  fake-ip-range: 198.18.0.1/16
+
+# [TUN设置]
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
 
 # [缓存设置]
 profile:
@@ -48,51 +74,12 @@ sniffer:
     QUIC:
       ports: [443,8443]
 
-# [TUN设置]
-tun:
-  enable: true
-  stack: system
-  dns-hijack:
-    - any:53
-  auto-route: true
-  auto-detect-interface: true
-
-# [DNS设置]
-dns:
-  enable: true
-  prefer-h3: true
-  listen: 0.0.0.0:1053
-  ipv6: false
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - '*.lan'
-    - '+.local'
-  default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-
-# [订阅节点]
-proxy-providers:
-  subscribe:
-    type: http
-    url: "https://your-service-provider"
-    path: ./Server/subscribe.yaml
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 1800
-      timeout: 5000
+proxies:
 
 # [策略组]
 proxy-groups:
   - name: "策略模式"
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Quantumult_X.png
     url: "https://cp.cloudflare.com/generate_204"
     include-all: true
     filter: "^"
@@ -101,7 +88,6 @@ proxy-groups:
 
   - name: "推特服务"
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/X.png
     proxies:
       - 策略模式
       - 优选模式
@@ -114,8 +100,20 @@ proxy-groups:
 
   - name: "飞机服务"
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
     proxies:
+      - 策略模式
+      - 优选模式
+      - 香港
+      - 狮城
+      - 日本
+      - 美国
+      - 台湾
+      - 韩国
+
+  - name: "游戏服务"
+    type: select
+    proxies:
+      - DIRECT
       - 策略模式
       - 优选模式
       - 香港
@@ -127,7 +125,6 @@ proxy-groups:
 
   - name: "智能服务"
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
     proxies:
       - 策略模式
       - 优选模式
@@ -140,7 +137,6 @@ proxy-groups:
 
   - name: "国际服务"
     type: select
-    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/Global.png
     proxies:
       - 策略模式
       - 优选模式
@@ -153,14 +149,12 @@ proxy-groups:
 
   - name: "无限模式"
     type: select
-    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/Final.png
     proxies:
       - 策略模式
       - 优选模式
 
   - name: "优选模式"
     type: url-test
-    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/Available.png
     url: "https://cp.cloudflare.com/generate_204"
     include-all: true
     filter: "^"
@@ -170,7 +164,6 @@ proxy-groups:
 
   - name: "香港"
     type: url-test
-    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/HK.png
     url: "https://cp.cloudflare.com/generate_204"
     include-all: true
     filter: "香港|港|🇭🇰|HK|(?i)Hong"
@@ -180,7 +173,6 @@ proxy-groups:
 
   - name: "狮城"
     type: url-test
-    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/SG.png
     url: "https://cp.cloudflare.com/generate_204"
     include-all: true
     filter: "新加坡|狮|SG|🇸🇬|(?i)Singapore"
@@ -190,7 +182,6 @@ proxy-groups:
 
   - name: "日本"
     type: url-test
-    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/JP.png
     url: "https://cp.cloudflare.com/generate_204"
     include-all: true
     filter: "日本|日|JP|🇯🇵|(?i)Japan"
@@ -200,7 +191,6 @@ proxy-groups:
 
   - name: "美国"
     type: url-test
-    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/US.png
     url: "https://cp.cloudflare.com/generate_204"
     include-all: true
     filter: "美国|美|US|🇺🇸|(?i)States"
@@ -210,7 +200,6 @@ proxy-groups:
 
   - name: "台湾"
     type: url-test
-    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/TW.png
     url: "https://cp.cloudflare.com/generate_204"
     include-all: true
     filter: "台湾|台|TW|🇹🇼|(?i)Taiwan"
@@ -220,7 +209,6 @@ proxy-groups:
 
   - name: "韩国"
     type: url-test
-    icon: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Gallery/Color/KR.png
     url: "https://cp.cloudflare.com/generate_204"
     include-all: true
     filter: "韩国|韩|KR|🇰🇷|(?i)Korea"
@@ -234,10 +222,11 @@ rules:
   - RULE-SET,广告拦截,REJECT
   - RULE-SET,推特服务,推特服务
   - RULE-SET,飞机服务,飞机服务
+  - RULE-SET,游戏服务,游戏服务
   - RULE-SET,智能服务,智能服务
   - RULE-SET,国际服务,国际服务
+  - RULE-SET,国内服务,DIRECT
   - RULE-SET,局域网络,DIRECT
-  - RULE-SET,陆地服务,DIRECT
   - MATCH,无限模式
 
 # [远程规则]
@@ -274,6 +263,14 @@ rule-providers:
     interval: 86400
     format: yaml
 
+  游戏服务:
+    type: http
+    path: ./Game/Game.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+
   智能服务:
     type: http
     path: ./Rule/AI.yaml
@@ -290,18 +287,18 @@ rule-providers:
     interval: 86400
     format: yaml
 
-  局域网络:
+  国内服务:
     type: http
-    path: ./Lan/Lan.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
+    path: ./China/China_Classical.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml
     behavior: classical
     interval: 86400
     format: yaml
 
-  陆地服务:
+  局域网络:
     type: http
-    path: ./China/China_Classical.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml
+    path: ./Lan/Lan.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
     behavior: classical
     interval: 86400
     format: yaml
