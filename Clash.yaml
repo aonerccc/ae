@@ -1,78 +1,67 @@
-# [端口设置]
+# 基础配置
 port: 7890
 socks-port: 7891
 redir-port: 7892
 mixed-port: 7893
-tproxy-port: 7894
-
-# [通用设置]
-external-controller: 0.0.0.0:9090
-geodata-loader: standard
-unified-delay: true
 allow-lan: true
-ipv6: true
+bind-address: "*"
 mode: rule
-log-level: info
-tcp-concurrent: true
-find-process-mode: strict
-global-client-fingerprint: chrome
+log-level: warning
+ipv6: false
+find-process-mode: 'off'
+external-controller: '127.0.0.1:9090'
 
-# [数据库]
-geodata-mode: false
-geo-auto-update: true
-geo-update-interval: 24
-geox-url:
-  geoip: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geoip.dat"
-  geosite: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geosite.dat"
-  mmdb: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/country.mmdb"
-  asn: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/GeoLite2-ASN.mmdb"
+# 性能优化
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+disable-keep-alive: false
+
+# 嗅探配置
+sniffer:
+  enable: false
+  sniff:
+    HTTP:
+      ports: []
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+
+# TUN 模式（按需启用）
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack: ["any:53", "tcp://any:53"]
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
+# 配置持久化
+profile:
+  store-selected: true
+  store-fake-ip: false  
 
 # [DNS设置]
 dns:
   enable: true
-  ipv6: false
-  prefer-h3: false
+  prefer-h3: true
   listen: 0.0.0.0:1053
+  ipv6: false
   enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*"
+    - +.lan
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
   nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-  fake-ip-filter:
-    - '*.lan'
-    - '+.local'
-  fake-ip-range: 198.18.0.1/16
-
-# [TUN设置]
-tun:
-  enable: true
-  stack: mixed
-  dns-hijack:
-    - any:53
-  auto-route: true
-  auto-detect-interface: true
-
-# [缓存设置]
-profile:
-  store-selected: true
-  store-fake-ip: true
-
-# [嗅探设置]
-sniffer:
-  enable: true
-  force-dns-mapping: true
-  parse-pure-ip: true
-  override-destination: true
-  sniff:
-    HTTP:
-      ports: [80,8080-8880]
-      override-destination: true
-    TLS:
-      ports: [443,8443]
-    QUIC:
-      ports: [443,8443]
+    - https://223.5.5.5/dns-query
+    - https://119.29.29.29/dns-query
 
 proxies:
 
