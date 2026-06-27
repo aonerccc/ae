@@ -219,14 +219,14 @@ proxy-groups:
 # [本地规则]
 rules:
   - RULE-SET,规则修正,DIRECT
+  - RULE-SET,局域网络,DIRECT
   - RULE-SET,广告拦截,REJECT
+  - RULE-SET,国内服务,DIRECT
   - RULE-SET,推特服务,推特服务
   - RULE-SET,飞机服务,飞机服务
   - RULE-SET,游戏服务,游戏服务
   - RULE-SET,智能服务,智能服务
   - RULE-SET,国际服务,国际服务
-  - RULE-SET,国内服务,DIRECT
-  - RULE-SET,局域网络,DIRECT
   - MATCH,无限模式
 
 # [远程规则]
