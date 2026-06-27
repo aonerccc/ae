@@ -221,12 +221,13 @@ rules:
   - RULE-SET,规则修正,DIRECT
   - RULE-SET,局域网络,DIRECT
   - RULE-SET,广告拦截,REJECT
-  - RULE-SET,国内服务,DIRECT
   - RULE-SET,推特服务,推特服务
   - RULE-SET,飞机服务,飞机服务
   - RULE-SET,游戏服务,游戏服务
   - RULE-SET,智能服务,智能服务
   - RULE-SET,国际服务,国际服务
+  - RULE-SET,国内服务,DIRECT
+  - GEOIP, CN, DIRECT
   - MATCH,无限模式
 
 # [远程规则]
@@ -235,6 +236,14 @@ rule-providers:
     type: http
     path: ./Direct/Direct.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml
+    behavior: classical
+    interval: 86400
+    format: yaml
+
+  局域网络:
+    type: http
+    path: ./Lan/Lan.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
     behavior: classical
     interval: 86400
     format: yaml
@@ -291,14 +300,6 @@ rule-providers:
     type: http
     path: ./China/China_Classical.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China_Classical.yaml
-    behavior: classical
-    interval: 86400
-    format: yaml
-
-  局域网络:
-    type: http
-    path: ./Lan/Lan.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
     behavior: classical
     interval: 86400
     format: yaml
