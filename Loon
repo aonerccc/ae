@@ -64,25 +64,25 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 香港节点 = NameRegex, FilterKey = "香港|港|HK|🇭🇰|(?i)Hong"
 狮城节点 = NameRegex, FilterKey = "新加坡|狮|SG|🇸🇬|(?i)Singapore"
 日本节点 = NameRegex, FilterKey = "日本|日|JP|🇯🇵|(?i)Japan"
-美国节点 = NameRegex, FilterKey = "美国|美|US|🇺🇸|(?i)States"
 台湾节点 = NameRegex, FilterKey = "台湾|台|TW|🇹🇼|(?i)Taiwan"
+美国节点 = NameRegex, FilterKey = "美国|美|US|🇺🇸|(?i)States"
 韩国节点 = NameRegex, FilterKey = "韩国|韩|KR|🇰🇷|(?i)Korea"
 
 # 代理策略
 [Proxy Group]
-策略模式 = select,优选,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
+策略模式 = select,优选模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 
 优选模式 = url-test,所有节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
 
-苹果服务 = select,直连模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
-谷歌服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
-微软服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-推特服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/X.png
-飞机服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-智能服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
-抖音服务 = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
-Spotify = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-Ins Ins = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
+苹果服务 = select,直连模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
+谷歌服务 = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+微软服务 = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+推特服务 = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/X.png
+飞机服务 = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+智能服务 = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+抖音服务 = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
+Spotify = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+Ins Ins = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
 
 直连模式 = select,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 禁止模式 = select,REJECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
@@ -90,8 +90,8 @@ Ins Ins = select,策略模式,香港,狮城,日本,美国,台湾,韩国,img-url 
 香港 = url-test,香港节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 狮城 = url-test,狮城节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 日本 = url-test,日本节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-美国 = url-test,美国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 台湾 = url-test,台湾节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+美国 = url-test,美国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 韩国 = url-test,韩国节点,url = http://www.gstatic.com/generate_204,interval = 600,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
 
 # 规则
