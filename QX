@@ -40,19 +40,19 @@ doh-server = https://doh.pub/dns-query, https://dns.alidns.com/dns-query
 
 # 代理策略
 [policy]
-static = 策略模式, 优选, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Quantumult_X.png
+static = 策略模式, 优选模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Quantumult_X.png
 
-url-latency-benchmark = 优选, server-tag-regex=.*, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+url-latency-benchmark = 优选模式, server-tag-regex=.*, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
 
-static = 苹果服务, 直连模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
-static = 谷歌服务, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
-static = 微软服务, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-static = 推特服务, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/X.png
-static = 飞机服务, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-static = 智能服务, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
-static = 抖音服务, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
-static = Spotify, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-static = Ins Ins, 策略模式, 香港, 狮城, 日本, 美国, 台湾, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
+static = 苹果服务, 直连模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
+static = 谷歌服务, 策略模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+static = 微软服务, 策略模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+static = 推特服务, 策略模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/X.png
+static = 飞机服务, 策略模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+static = 智能服务, 策略模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+static = 抖音服务, 策略模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_1.png
+static = Spotify, 策略模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+static = Ins Ins, 策略模式, 香港, 狮城, 日本, 台湾, 美国, 韩国, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Instagram.png
 
 static = 直连模式, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 static = 禁止模式, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
@@ -60,8 +60,8 @@ static = 禁止模式, reject, img-url=https://raw.githubusercontent.com/Koolson
 url-latency-benchmark = 香港, server-tag-regex=香港|港|🇭🇰|HK|(?i)Hong, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 url-latency-benchmark = 狮城, server-tag-regex=新加坡|新|🇸🇬|SG|(?i)Singapore, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 url-latency-benchmark = 日本, server-tag-regex=日本|日|🇯🇵|JP|(?i)Japan, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-url-latency-benchmark = 美国, server-tag-regex=美国|美|🇺🇸|US|(?i)States, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 url-latency-benchmark = 台湾, server-tag-regex=台湾|台|🇼🇸|TW|taipei|(?i)Taiwan, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png
+url-latency-benchmark = 美国, server-tag-regex=美国|美|🇺🇸|US|(?i)States, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 url-latency-benchmark = 韩国, server-tag-regex=韩国|韩|🇰🇷|KR|(?i)Korea, check-interval=300, tolerance=0, alive-checking=false, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
 
 # 远程订阅
