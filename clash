@@ -68,12 +68,12 @@ proxies:
 # [策略组]
 proxy-groups:
   - { name: "策略模式", type: select, proxies: [] }
-  - { name: "推特服务", type: select, proxies: ["策略模式"] }
-  - { name: "飞机服务", type: select, proxies: ["策略模式"] }
-  - { name: "游戏服务", type: select, proxies: ["DIRECT","策略模式"] }
-  - { name: "智能服务", type: select, proxies: ["策略模式"] }
-  - { name: "国际服务", type: select, proxies: ["策略模式"] }
-  - { name: "无限模式", type: select, proxies: ["策略模式"] }
+  - { name: "推特服务", type: select, proxies: ["策略模式","优选模式"] }
+  - { name: "飞机服务", type: select, proxies: ["策略模式","优选模式"] }
+  - { name: "游戏服务", type: select, proxies: ["策略模式","DIRECT"] }
+  - { name: "智能服务", type: select, proxies: ["策略模式","优选模式"] }
+  - { name: "国际服务", type: select, proxies: ["策略模式","优选模式"] }
+  - { name: "优选模式", type: url-test, lazy: true, url: http://www.gstatic.com/generate_204, interval: 900, proxies: [] }
 
 # [本地规则]
 rules:
@@ -87,7 +87,7 @@ rules:
   - RULE-SET,智能服务,智能服务
   - RULE-SET,国际服务,国际服务
   - GEOIP, CN, DIRECT
-  - MATCH,无限模式
+  - MATCH,策略模式
 
 # [远程规则]
 rule-providers:
