@@ -45,7 +45,7 @@ profile:
   store-selected: true
   store-fake-ip: false  
 
-# [DNS设置]
+# DNS设置
 dns:
   enable: true
   prefer-h3: true
@@ -65,7 +65,7 @@ dns:
 
 proxies:
 
-# [策略组]
+# 策略组
 proxy-groups:
   - { name: "策略模式", type: select, proxies: [] }
   - { name: "推特服务", type: select, proxies: ["策略模式","优选模式"] }
@@ -75,34 +75,20 @@ proxy-groups:
   - { name: "国际服务", type: select, proxies: ["策略模式","优选模式"] }
   - { name: "优选模式", type: url-test, lazy: true, url: http://www.gstatic.com/generate_204, interval: 900, proxies: [] }
 
-# [本地规则]
-rules:
-  - RULE-SET,规则修正,DIRECT
-  - RULE-SET,广告拦截,REJECT
-  - RULE-SET,推特服务,推特服务
-  - RULE-SET,飞机服务,飞机服务
-  - RULE-SET,游戏服务,游戏服务
-  - RULE-SET,智能服务,智能服务
-  - RULE-SET,国际服务,国际服务
-  - RULE-SET,国内服务,DIRECT
-  - RULE-SET,局域网络,DIRECT
-  - GEOIP, CN, DIRECT
-  - MATCH,策略模式
-
-# [远程规则]
+# 订阅规则
 rule-providers:
-  规则修正:
+  局域网络:
     type: http
-    path: ./Clash/Direct.yaml
-    url: https://rule.kelee.one/Clash/Direct.yaml
+    path: ./Clash/Lan.yaml
+    url: https://rule.kelee.one/Clash/Lan.yaml
     behavior: classical
     interval: 86400
     format: yaml
 
-  广告拦截:
+  规则修正:
     type: http
-    path: ./Clash/Advertising.yaml
-    url: https://rule.kelee.one/Clash/Advertising.yaml
+    path: ./Clash/Direct.yaml
+    url: https://rule.kelee.one/Clash/Direct.yaml
     behavior: classical
     interval: 86400
     format: yaml
@@ -155,10 +141,15 @@ rule-providers:
     interval: 86400
     format: yaml
 
-  局域网络:
-    type: http
-    path: ./Clash/Lan.yaml
-    url: https://rule.kelee.one/Clash/Lan.yaml
-    behavior: classical
-    interval: 86400
-    format: yaml
+# 本地规则
+rules:
+  - RULE-SET,局域网络,DIRECT
+  - RULE-SET,规则修正,DIRECT
+  - RULE-SET,推特服务,推特服务
+  - RULE-SET,飞机服务,飞机服务
+  - RULE-SET,游戏服务,游戏服务
+  - RULE-SET,智能服务,智能服务
+  - RULE-SET,国际服务,国际服务
+  - RULE-SET,国内服务,DIRECT
+  - GEOIP, CN, DIRECT
+  - MATCH,策略模式
