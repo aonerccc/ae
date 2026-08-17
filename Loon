@@ -96,6 +96,7 @@ Ins Ins = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url 
 
 # 规则
 [Rule]
+DOMAIN-SUFFIX,push.apple.com,优选模式
 GEOIP,CN,直连模式
 FINAL,策略模式
 
