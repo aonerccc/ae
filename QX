@@ -110,7 +110,7 @@ passphrase =
 p12 = 
 
 # 跳过验证证书
-skip_validating_cert = true
+skip_validating_cert = false
 # 强制SNI域名
 force_sni_domain_name = false
 # 主机名
