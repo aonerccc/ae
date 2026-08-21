@@ -96,9 +96,9 @@ Ins Ins = select,策略模式,香港,狮城,日本,台湾,美国,韩国,img-url 
 
 # 规则
 [Rule]
-DOMAIN-SUFFIX,push.apple.com,优选模式
-GEOIP,CN,直连模式
-FINAL,策略模式
+DOMAIN-SUFFIX, push.apple.com, 优选模式
+GEOIP, CN, 直连模式
+FINAL, 策略模式
 
 # 远程规则
 [Remote Rule]
@@ -128,16 +128,19 @@ https://rule.kelee.one/Loon/Crypto.lsr, policy=日本, tag=Crypto.lsr, enabled=t
 [Plugin]
 https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, enabled=false
-https://kelee.one/Tool/Loon/Lpx/DragonRead_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/RedPaper_remove_ads.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, policy=直连模式, enabled=true
+https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/refs/heads/master/Loon/Plugin/FanQieNovel.plugin, tag=番茄小说, img-url=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/DragonRead.png, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Spotify_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/QiDian_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/PinDuoDuo_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Dewu_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/DiDi_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Douyu_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/MeiTu_remove_ads.lpx, enabled=true
@@ -159,4 +162,4 @@ https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=策略模式, enabled=tru
 
 [Mitm]
 hostname =
-skip-server-cert-verify = true
+skip-server-cert-verify = false
