@@ -72,21 +72,19 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 
 # 代理策略
 [Proxy Group]
-策略模式 = select,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
-
+策略模式 = select,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Loon.png
 优选模式 = url-test,常用节点,url = http://www.gstatic.com/generate_204,interval = 120,tolerance = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
 
-苹果服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
-谷歌服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png
-微软服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MicrosoftCopilot.png
-推特服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/X.png
-飞机服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Telegram.png
-加密服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OKX.png
-智能服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChatGPT.png
-抖音服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png
-Spotify = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Spotify.png
-Ins Ins = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Instagram.png
-
+苹果服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_2.png
+谷歌服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Google.png
+微软服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/MicrosoftCopilot.png
+推特服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/X.png
+飞机服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Telegram.png
+加密服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/OKX.png
+智能服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/ChatGPT.png
+抖音服务 = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png
+Spotify = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Spotify.png
+Ins Ins = select,策略模式,优选模式,香港,狮城,日本,台湾,美国,直连模式,禁止模式,img-url = https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Instagram.png
 直连模式 = select,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 禁止模式 = select,REJECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png
 
